@@ -143,6 +143,13 @@ qx.Class.define("dialog.Prompt",
       {
         this.getCallback().call( this.getContext(), this.getValue() );
       }
-    } 
+    },
+
+    show: function()
+    {
+      this.base(arguments);
+      this._textField.focus();
+      this._textField.selectAllText();
+    }
   }    
 });
